@@ -3,7 +3,9 @@ import { useDispatch } from 'react-redux'
 import user from '../reducers/user'
 import uniqid from 'uniqid'
 import styled from 'styled-components'
-import { InfoInput } from '../components/InfoInput'
+
+import  InfoInput  from '../components/InfoInput'
+import  ImageUpload  from '../components/ImageUpload'
 
 const AddProject = () => {
 const dispatch = useDispatch()
@@ -15,6 +17,7 @@ const [newStylist, setStylist] = useState('')
 const [newDesigner, setDesigner] = useState('')
 const [newHair, setHair] = useState('')
 const [newMakeup, setMakeup] = useState('')
+const [newImg, setNewImg] = useState('')
 
   const AddBtn = styled.button`
   background-color: green;
@@ -42,32 +45,42 @@ const addProjects = (event) => {
       stylist: newStylist,
       designer: newDesigner,
       hair: newHair,
-      makeup: newMakeup        
+      makeup: newMakeup,
+      img: newImg        
     }    
     // localStorage.setItem('user',JSON.stringify([...action.payload])) 
     dispatch(user.actions.addProject(newProject))
     setNewName('')    
+    setNewCD('')    
+    setPhotographer('')    
+    setModel('')    
+    setStylist('')    
+    setDesigner('')    
+    setHair('')    
+    setMakeup('')
+    setNewImg('')    
 }
 
   return (
     <>
-      <form className='add-project' onSubmit={addProjects}> 
+      <form onSubmit={addProjects}> 
         <label>Customer:</label>    
         <InfoInput value={newName}func={setNewName} /> 
-        <label>Customer:</label>    
+        <label>Creative Director:</label>    
         <InfoInput value={newCD}func={setNewCD} />
-        <label>Customer:</label>    
+        <label>Photographer:</label>    
         <InfoInput value={newPhotographer}func={setPhotographer} />
-        <label>Customer:</label>    
+        <label>Model:</label>    
         <InfoInput value={newModel}func={setModel} />
-        <label>Customer:</label>    
+        <label>Stylist:</label>    
         <InfoInput value={newStylist}func={setStylist} />
-        <label>Customer:</label>    
+        <label>Designer:</label>    
         <InfoInput value={newDesigner}func={setDesigner} />
-        <label>Customer:</label>    
+        <label>Hair:</label>    
         <InfoInput value={newHair}func={setHair} />
-        <label>Customer:</label>    
+        <label>Makeup:</label>    
         <InfoInput value={newMakeup}func={setMakeup} />
+        <ImageUpload func={setNewImg}/>
         <AddBtn 
           type="submit"            
           disabled={!newName}>

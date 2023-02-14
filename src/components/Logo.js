@@ -1,9 +1,18 @@
 import React from 'react'
+import styled from 'styled-components'
+
 import headerLogo from '../assets/logo.jpg'
+
+const HeaderLogo = styled.img`
+  width: 100%;
+  @media (min-width:1000px){
+    width: 30%;
+  }  
+`
 
 const Logo = () => {
   return (
-    <img className="header-logo" src={headerLogo} alt="header-logo" />
+    <HeaderLogo src={headerLogo} alt="header-logo" />
   )
 }
 

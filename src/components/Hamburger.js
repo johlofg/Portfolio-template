@@ -8,9 +8,9 @@ width: 2rem;
 height: 2rem;
 position: fixed;
 // top: 15px;
-bottom: 0;
+bottom: 5px;
 right: 20px;
-z-index: 20;
+z-index: 200;
 display: none; 
 @media (max-width: 768px) {
   display: flex;
@@ -22,8 +22,8 @@ display: none;
   /* box-shadow: 0px 0px 2px grey ; */
 }
 div {  
-  width: 32px;
-  height: 4px;
+  width: .9rem;
+  height: 2px;
   background-color: ${({ open }) => (open ? '#000' : '#000')};  
   border-radius: 10px;
   transform-origin: 1px;

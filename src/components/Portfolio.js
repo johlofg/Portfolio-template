@@ -11,7 +11,7 @@ const ProjectContainer = styled.div`
 const Portfolio = () => {
   const allProjects = useSelector(store => store.user.projects) 
   return (
-    <ProjectContainer className='project-container'>    
+    <ProjectContainer >    
       {allProjects && allProjects.map(project => (
         <div key={project.id}>
           <p>{project.name}</p>

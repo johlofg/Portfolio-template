@@ -1,13 +1,21 @@
 import React from 'react'
+import styled from 'styled-components'
 
-export const InfoInput = (props) => {
+const Input = styled.input`
+width: 110%;
+margin: 5px 0;
+`
+
+const InfoInput = (props) => {
   return (
     <div>
-      <input
+      <Input
           type="text"
           value={props.value}
           onChange={(event) => props.func(event.target.value)}>
-        </input>
+        </Input>
     </div>
   )
 }
+
+export default InfoInput

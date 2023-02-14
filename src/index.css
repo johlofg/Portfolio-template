@@ -12,15 +12,12 @@ code {
     monospace;
 }
 
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  background: #fff;
 }
 
-.header-logo {
-  width: 100%;
-}
+
+/* *** Används för conditional på tab och content i dashboard *** */
 
 *,
 ::before,
@@ -30,24 +27,6 @@ code {
   padding: 0;
 }
 
-body {
-  background: #fff;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  width: 500px;
-  height: 300px;
-  background: #f1f1f1;
-  margin: 100px auto 0;
-  border: 1px solid rgba(0, 0, 0, 0.274);
-}
-
-.bloc-tabs {
-  display: flex;
-}
 .tabs {
   padding: 15px;
   text-align: center;
@@ -80,12 +59,6 @@ body {
   background: rgb(88, 147, 241);
 }
 
-button {
-  border: none;
-}
-.content-tabs {
-  flex-grow: 1;
-}
 .content {
   background: white;
   padding: 20px;
@@ -93,19 +66,9 @@ button {
   height: 100%;
   display: none;
 }
-/* .content h2 {
-  padding: 0px 0 5px 0px;
-}
-.content hr {
-  width: 100px;
-  height: 2px;
-  background: #222;
-  margin-bottom: 5px;
-} */
-/* .content p {
-  width: 100%;
-  height: 100%;
-} */
+
 .active-content {
   display: block;
 }
+
+

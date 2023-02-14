@@ -30,7 +30,7 @@ export const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route exact path="/" element={<Portfolio />} />
+            <Route path="/" element={<Portfolio />} />
             <Route exact path="/About" element={<About />} />
             <Route exact path="/Dashboard" element={<Dashboard />} />
             <Route exact path="/Login" element={<LogIn />} />

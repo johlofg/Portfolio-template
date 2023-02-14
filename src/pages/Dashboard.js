@@ -10,15 +10,28 @@ const Main = styled.div`
   align-items: center;
   position: relative;
   width: 80%;
-  height: 80%;
+  height: 70vh;
   background: #fff;
   margin: 100px auto 0;
   border: 1px solid rgba(0, 0, 0, 0.274);
+
+  @media (min-width:1000px){
+    width: 50%;
+  }
 `
 const BtnContainer = styled.div`
 display: flex;
 width: 100%;
 `
+
+const TabBtn = styled.button`
+border: none;
+`
+
+const ContentTabs = styled.div`
+flex-grow: 1;
+`
+
 
 const Dashboard = () => {
   const [toggleState, setToggleState] = useState(1)
@@ -30,27 +43,27 @@ const Dashboard = () => {
   return (
     <Main>
       <BtnContainer>
-        <button
+        <TabBtn
           className={toggleState === 1 ?'tabs active-tabs' : 'tabs'}
           onClick={() => toggleTab(1)}>
             Add Project
-        </button>
-        <button
+        </TabBtn>
+        <TabBtn
           className={toggleState === 2 ?'tabs active-tabs' : 'tabs'}
           onClick={() => toggleTab(2)}>
             Manage List
-        </button>
+        </TabBtn>
       </BtnContainer>
-      <div className='content-tabs'>
+      <ContentTabs>
         <div className={toggleState === 1 ? 'content active-content' : 'content'}>
           <AddProject />
         </div>
-      </div>
-      <div className='content-tabs'>
+      </ContentTabs>
+      <ContentTabs >
         <div className={toggleState === 2 ? 'content active-content' : 'content'}>
           <Projectlist />    
         </div>
-      </div>      
+      </ContentTabs>      
     </Main>
   )
 }
